@@ -9,6 +9,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
+import net.prochicken.espercraft.item.custom.RadioScannerItem;
 
 import java.util.function.Function;
 
@@ -16,6 +17,7 @@ public class ModItems {
 
     public static final Item RIFT_SHARD = registerItem("rift_shard", Item::new);
     public static final Item RIFT_CRYSTAL = registerItem("rift_crystal", Item::new);
+    public static final Item RADIO_SCANNER = registerItem("radio_scanner", properties -> new RadioScannerItem(properties.durability(32)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name),
@@ -24,10 +26,5 @@ public class ModItems {
 
     public static void registerModItems() {
         Espercraft.LOGGER.info("Registering Mod Items for " + Espercraft.MOD_ID);
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
-            output.accept(RIFT_SHARD);
-            output.accept(RIFT_CRYSTAL);
-        });
     }
 }

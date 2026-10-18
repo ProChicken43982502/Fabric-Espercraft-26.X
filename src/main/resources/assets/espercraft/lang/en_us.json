@@ -1,6 +1,7 @@
 {
   "item.espercraft.rift_shard" : "Rift Shard",
   "item.espercraft.rift_crystal" : "Rift Crystal",
+  "item.espercraft.radio_scanner" : "Radio Scanner",
   "block.espercraft.riftshard_block" : "Block of Rift Shards",
   "creativemodetab.espercraft.espercraft_creative_mode_tab": "Espercraft"
 }
