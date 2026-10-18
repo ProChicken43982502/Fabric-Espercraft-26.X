@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
 
+import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.creativemodetab.ModCreativeModeTabs;
 import net.prochicken.espercraft.item.ModItems;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ public class Espercraft implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 		ModCreativeModeTabs.registerModCreativeModeTabs();
 
 		LOGGER.info("Loading Mod " + Espercraft.MOD_ID);

@@ -8,6 +8,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.prochicken.espercraft.Espercraft;
+import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.item.ModItems;
 
 public class ModCreativeModeTabs {
@@ -18,6 +19,7 @@ public class ModCreativeModeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.RIFT_SHARD);
                         output.accept(ModItems.RIFT_CRYSTAL);
+                        output.accept(ModBlocks.RIFTSHARD_BLOCK);
                     }).build());
 
     public static void registerModCreativeModeTabs() {
