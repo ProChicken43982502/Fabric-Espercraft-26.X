@@ -20,6 +20,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RIFT_SHARD);
                         output.accept(ModItems.RIFT_CRYSTAL);
                         output.accept(ModItems.RADIO_SCANNER);
+                        output.accept(ModItems.MAGNIFIER);
                         output.accept(ModBlocks.RIFTSHARD_BLOCK);
                     }).build());
 
