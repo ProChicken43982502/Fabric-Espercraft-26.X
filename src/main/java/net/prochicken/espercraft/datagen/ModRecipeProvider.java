@@ -9,8 +9,8 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Items;
 import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.item.ModItems;
+import org.jspecify.annotations.NonNull;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -19,7 +19,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+    protected @NonNull RecipeProvider createRecipeProvider(HolderLookup.@NonNull Provider registries, @NonNull RecipeOutput output) {
         return new RecipeProvider(registries, output) {
             @Override
             public void buildRecipes() {
@@ -37,22 +37,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.COMPASS), has(Items.COMPASS))
                         .save(output);
                 shaped(RecipeCategory.TOOLS, ModItems.MAGNIFIER)
-                        .pattern(" # ")
-                        .pattern("#G#")
-                        .pattern("|# ")
-                        .define('G', Items.GLASS)
-                        .define('#', Items.GOLD_INGOT)
-                        .define('|', Items.STICK)
+                        .pattern("A")
+                        .pattern("G")
+                        .define('A', Items.AMETHYST_SHARD)
+                        .define('G', Items.GOLD_INGOT)
                         .group("cft_magnifier")
                         .unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT))
-                        .unlockedBy(getHasName(Items.GLASS), has(Items.GLASS))
+                        .unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
                         .save(output);
             }
         };
     }
 
     @Override
-    public String getName() {
+    public @NonNull String getName() {
         return "Espercraft Recipes";
     }
 }

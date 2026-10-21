@@ -17,7 +17,7 @@ public class ModItems {
     public static final Item RIFT_SHARD = registerItem("rift_shard", Item::new);
     public static final Item RIFT_CRYSTAL = registerItem("rift_crystal", Item::new);
     public static final Item RADIO_SCANNER = registerItem("radio_scanner", properties -> new RadioScannerItem(properties.durability(32)));
-    public static final Item MAGNIFIER = registerItem("magnifier", MagnifierItem::new);
+    public static final Item MAGNIFIER = registerItem("magnifier", properties -> new MagnifierItem(properties.stacksTo(1)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name),
