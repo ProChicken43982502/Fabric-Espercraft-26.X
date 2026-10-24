@@ -2,10 +2,7 @@ package net.prochicken.espercraft;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.prochicken.espercraft.datagen.ModBlockLootTableProvider;
-import net.prochicken.espercraft.datagen.ModBlockTagsProvider;
-import net.prochicken.espercraft.datagen.ModModelProvider;
-import net.prochicken.espercraft.datagen.ModRecipeProvider;
+import net.prochicken.espercraft.datagen.*;
 
 public class EspercraftDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -13,6 +10,7 @@ public class EspercraftDataGenerator implements DataGeneratorEntrypoint {
 		var pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModBlockTagsProvider::new);
 		pack.addProvider(ModBlockLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);

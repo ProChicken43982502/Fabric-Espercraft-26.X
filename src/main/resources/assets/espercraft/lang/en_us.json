@@ -3,6 +3,20 @@
   "item.espercraft.rift_crystal" : "Rift Crystal",
   "item.espercraft.radio_scanner" : "Radio Scanner",
   "item.espercraft.magnifier" : "Magnifier",
+  "item.espercraft.tomato" : "Tomato",
+  "item.espercraft.rotten_tomato" : "Rotten Tomato",
+
   "block.espercraft.riftshard_block" : "Block of Rift Shards",
-  "creativemodetab.espercraft.espercraft_creative_mode_tab": "Espercraft"
+  "block.espercraft.research_table" : "Research Table",
+
+  "creativemodetab.espercraft.espercraft_creative_mode_tab": "Espercraft",
+
+  "container.espercraft.research": "Research",
+
+  "tooltip.espercraft.radio_scanner": "§7Hold use to scan to locate nearby entities§r",
+  "tooltip.espercraft.magnifier_1": "§7Hold use to scan things and add them to your §8Discoveries§r",
+  "tooltip.espercraft.magnifier_2": "§8Discoveries§7 can be viewed in the §8Reasearch Table§r",
+  "tooltip.espercraft.shift_for_more_info": "§7Press §6SHIFT§7 for more info§r",
+  "tooltip.espercraft.research_table_1": "§7View information on your §8Discoveries§r",
+  "tooltip.espercraft.research_table_2": "§8Discoveries§7 can be made with a §8Magnifier§r"
 }

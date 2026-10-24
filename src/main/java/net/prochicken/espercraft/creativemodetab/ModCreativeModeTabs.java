@@ -19,9 +19,12 @@ public class ModCreativeModeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.RIFT_SHARD);
                         output.accept(ModItems.RIFT_CRYSTAL);
+                        output.accept(ModBlocks.RIFTSHARD_BLOCK);
                         output.accept(ModItems.RADIO_SCANNER);
                         output.accept(ModItems.MAGNIFIER);
-                        output.accept(ModBlocks.RIFTSHARD_BLOCK);
+                        output.accept(ModBlocks.RESEARCH_TABLE);
+                        output.accept(ModItems.TOMATO);
+                        output.accept(ModItems.ROTTEN_TOMATO);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

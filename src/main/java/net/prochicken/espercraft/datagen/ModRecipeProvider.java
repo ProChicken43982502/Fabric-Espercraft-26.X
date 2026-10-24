@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.item.ModItems;
@@ -44,6 +45,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .group("cft_magnifier")
                         .unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT))
                         .unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+                        .save(output);
+                shaped(RecipeCategory.MISC, ModBlocks.RESEARCH_TABLE)
+                        .pattern("BB")
+                        .pattern("##")
+                        .pattern("##")
+                        .define('B', Items.BOOK)
+                        .define('#', ItemTags.WOODEN_TOOL_MATERIALS)
+                        .group("cft_research_table")
+                        .unlockedBy(getHasName(ModItems.MAGNIFIER), has(ModItems.MAGNIFIER))
                         .save(output);
             }
         };
