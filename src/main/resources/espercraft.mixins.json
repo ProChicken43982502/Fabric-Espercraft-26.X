@@ -3,7 +3,6 @@
   "package": "net.prochicken.espercraft.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "PlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
