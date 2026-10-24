@@ -12,6 +12,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
+import net.prochicken.espercraft.data.ModDataComponents;
 import net.prochicken.espercraft.food.ModFoods;
 import net.prochicken.espercraft.item.custom.MagnifierItem;
 import net.prochicken.espercraft.item.custom.RadioScannerItem;

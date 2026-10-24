@@ -6,6 +6,7 @@ import net.minecraft.resources.Identifier;
 
 import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.creativemodetab.ModCreativeModeTabs;
+import net.prochicken.espercraft.data.ModDataComponents;
 import net.prochicken.espercraft.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +21,12 @@ public class Espercraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModCreativeModeTabs.registerModCreativeModeTabs();
+
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		ModCreativeModeTabs.registerModCreativeModeTabs();
+
+		ModDataComponents.registerDataComponents();
 
 		LOGGER.info("Loading Mod " + Espercraft.MOD_ID);
 	}

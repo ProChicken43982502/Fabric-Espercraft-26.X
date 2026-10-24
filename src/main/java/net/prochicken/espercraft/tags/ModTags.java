@@ -9,6 +9,8 @@ import net.prochicken.espercraft.Espercraft;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> SCANNABLE_WITH_MAGNIFIER = createTag("scannable_with_magnifier");
+
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name));
         }

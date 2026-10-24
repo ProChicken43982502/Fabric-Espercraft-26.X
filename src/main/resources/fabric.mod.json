@@ -18,6 +18,9 @@
 		"main": [
 			"net.prochicken.espercraft.Espercraft"
 		],
+		"client": [
+			"net.prochicken.espercraft.EspercraftClient"
+		],
 		"fabric-datagen": [
 			"net.prochicken.espercraft.EspercraftDataGenerator"
 		]

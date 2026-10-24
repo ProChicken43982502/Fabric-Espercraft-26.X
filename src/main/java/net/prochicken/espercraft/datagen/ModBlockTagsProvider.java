@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
 import net.prochicken.espercraft.block.ModBlocks;
+import net.prochicken.espercraft.tags.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,5 +20,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.RIFTSHARD_BLOCK);
         valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RIFTSHARD_BLOCK);
+        valueLookupBuilder(ModTags.Blocks.SCANNABLE_WITH_MAGNIFIER)
+                .add(ModBlocks.RIFTSHARD_BLOCK)
+                .add(ModBlocks.RESEARCH_TABLE);
     }
 }
