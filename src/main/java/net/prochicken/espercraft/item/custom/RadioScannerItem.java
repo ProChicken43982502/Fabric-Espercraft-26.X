@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.prochicken.espercraft.stat.ModStats;
 import org.jspecify.annotations.NonNull;
 
 import java.util.List;
@@ -60,6 +61,7 @@ public class RadioScannerItem extends Item {
 
             for (LivingEntity target : targets) {
                 target.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0));
+                player.awardStat(ModStats.FREQUENCIES_SCANNED_WITH_RADIO_SCANNER, 1);
             }
 
             stack.hurtWithoutBreaking(1, player);

@@ -18,15 +18,18 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
         blockModelGenerators.createTrivialCube(ModBlocks.RIFTSHARD_BLOCK);
+
+        blockModelGenerators.createAmethystCluster(ModBlocks.RIFT_CRYSTAL);
+
         blockModelGenerators.createHorizontallyRotatedBlock(ModBlocks.RESEARCH_TABLE, TexturedModel.ORIENTABLE);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(ModItems.RIFT_SHARD, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.RIFT_CRYSTAL, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ModItems.MAGNIFIER, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.TOMATO, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.ROTTEN_TOMATO, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.declareCustomModelItem(ModBlocks.RIFT_CRYSTAL.asItem());
     }
 }

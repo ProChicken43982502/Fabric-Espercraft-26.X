@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.level.block.AmethystClusterBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -26,6 +27,12 @@ public class ModBlocks {
             properties -> new Block(properties.strength(4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)
+                    .emissiveRendering((state, world, pos) -> true)));
+    public static final Block RIFT_CRYSTAL = registerBlock("rift_crystal",
+            properties -> new AmethystClusterBlock(7.0f, 10.0f, properties
+                    .strength(1.5f)
+                    .sound(SoundType.AMETHYST_CLUSTER)
+                    .noOcclusion()
                     .emissiveRendering((state, world, pos) -> true)));
 
     public static final Block RESEARCH_TABLE = registerBlock("research_table",

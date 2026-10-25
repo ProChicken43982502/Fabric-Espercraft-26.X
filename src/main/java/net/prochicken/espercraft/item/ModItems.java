@@ -23,7 +23,6 @@ import java.util.function.Function;
 public class ModItems {
 
     public static final Item RIFT_SHARD = registerItem("rift_shard", Item::new);
-    public static final Item RIFT_CRYSTAL = registerItem("rift_crystal", Item::new);
     public static final Item RADIO_SCANNER = registerItem("radio_scanner", properties -> new RadioScannerItem(properties
             .durability(32)) {
         @Override

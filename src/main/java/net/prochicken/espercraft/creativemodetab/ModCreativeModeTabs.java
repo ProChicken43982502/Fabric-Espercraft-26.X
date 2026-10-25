@@ -18,7 +18,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativemodetab.espercraft.espercraft_creative_mode_tab"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.RIFT_SHARD);
-                        output.accept(ModItems.RIFT_CRYSTAL);
+                        output.accept(ModBlocks.RIFT_CRYSTAL);
                         output.accept(ModBlocks.RIFTSHARD_BLOCK);
                         output.accept(ModItems.RADIO_SCANNER);
                         output.accept(ModItems.MAGNIFIER);

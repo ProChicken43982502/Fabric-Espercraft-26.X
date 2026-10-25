@@ -17,9 +17,15 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider registries) {
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.RIFTSHARD_BLOCK);
+                .add(ModBlocks.RIFTSHARD_BLOCK)
+                .add(ModBlocks.RIFT_CRYSTAL);
+
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.RESEARCH_TABLE);
+
         valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RIFTSHARD_BLOCK);
+
         valueLookupBuilder(ModTags.Blocks.SCANNABLE_WITH_MAGNIFIER)
                 .add(ModBlocks.RIFTSHARD_BLOCK)
                 .add(ModBlocks.RESEARCH_TABLE);

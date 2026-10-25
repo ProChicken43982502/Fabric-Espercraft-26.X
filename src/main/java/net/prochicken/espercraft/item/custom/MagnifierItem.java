@@ -1,6 +1,9 @@
 package net.prochicken.espercraft.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -9,10 +12,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.prochicken.espercraft.data.Discoveries;
 import net.prochicken.espercraft.data.ModDataComponents;
+import net.prochicken.espercraft.stat.ModStats;
 import net.prochicken.espercraft.tags.ModTags;
 
 import java.util.Map;
@@ -81,6 +87,21 @@ public class MagnifierItem extends Item {
         if (progress.ticks >= SCAN_TICKS) {
             stack.set(ModDataComponents.COORDINATES, target);
             level.playSound(null, entity.blockPosition(), SoundEvents.NOTE_BLOCK_BELL.value(), SoundSource.PLAYERS, 1.0f, 1.5f);
+
+            if (entity instanceof ServerPlayer serverPlayer) {
+                Block scanned = level.getBlockState(target).getBlock();
+                Identifier discovery = Discoveries.forBlock(scanned);
+
+                if (Discoveries.discover(serverPlayer, discovery)) {
+                    serverPlayer.sendOverlayMessage(Component.literal("New discovery: " + scanned.getName().getString()));
+                    serverPlayer.awardStat(ModStats.SCANNED_WITH_MAGNIFIER, 1);
+                    serverPlayer.awardStat(ModStats.UNIQUE_DISCOVERIES_MADE, 1);
+                } else {
+                    serverPlayer.sendOverlayMessage(Component.literal("Already discovered"));
+                    serverPlayer.awardStat(ModStats.SCANNED_WITH_MAGNIFIER, 1);
+                }
+            }
+
             PROGRESS.remove(entity.getUUID());
         }
     }
