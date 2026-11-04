@@ -20,6 +20,10 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
+
+        tag(BlockTags.CROPS)
+                .add(ModBlocks.getRK(ModBlocks.TOMATO_CROP));
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.getRK(ModBlocks.RIFTSHARD_BLOCK))
                 .add(ModBlocks.getRK(ModBlocks.RIFT_CRYSTAL));

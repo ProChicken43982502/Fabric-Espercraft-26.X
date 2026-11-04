@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "cft_research_table",
+  "group": "research_table",
   "key": {
     "#": "#minecraft:wooden_tool_materials",
     "B": "minecraft:book"

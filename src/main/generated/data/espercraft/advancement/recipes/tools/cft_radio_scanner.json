@@ -1,11 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_magnifier": {
+    "has_compass": {
       "conditions": {
         "items": [
           {
-            "items": "espercraft:magnifier"
+            "items": "minecraft:compass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rift_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "espercraft:rift_shard"
           }
         ]
       },
@@ -13,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "espercraft:research_table"
+        "recipe": "espercraft:cft_radio_scanner"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_magnifier"
+      "has_rift_shard",
+      "has_compass"
     ]
   ],
   "rewards": {
     "recipes": [
-      "espercraft:research_table"
+      "espercraft:cft_radio_scanner"
     ]
   }
 }

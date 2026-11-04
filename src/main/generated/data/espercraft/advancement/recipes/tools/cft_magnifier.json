@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "espercraft:magnifier"
+        "recipe": "espercraft:cft_magnifier"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "espercraft:magnifier"
+      "espercraft:cft_magnifier"
     ]
   }
 }

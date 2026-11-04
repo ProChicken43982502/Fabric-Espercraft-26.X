@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "tomato_jelly",
+  "ingredients": [
+    "minecraft:sugar",
+    "espercraft:tomato_juice"
+  ],
+  "result": {
+    "id": "espercraft:tomato_jelly"
+  }
+}

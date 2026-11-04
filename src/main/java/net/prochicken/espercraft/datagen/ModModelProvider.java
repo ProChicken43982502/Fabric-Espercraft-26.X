@@ -7,6 +7,7 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.prochicken.espercraft.block.ModBlocks;
+import net.prochicken.espercraft.block.custom.TomatoCropBlock;
 import net.prochicken.espercraft.item.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -22,6 +23,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createAmethystCluster(ModBlocks.RIFT_CRYSTAL);
 
         blockModelGenerators.createHorizontallyRotatedBlock(ModBlocks.RESEARCH_TABLE, TexturedModel.ORIENTABLE);
+
+        blockModelGenerators.createCropBlock(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE, 0, 1, 2, 3, 4);
     }
 
     @Override
@@ -29,6 +32,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ModItems.RIFT_SHARD, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.TOMATO, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.ROTTEN_TOMATO, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.TOMATO_SOUP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.TOMATO_JUICE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.TOMATO_JELLY, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.declareCustomModelItem(ModBlocks.RIFT_CRYSTAL.asItem());
     }

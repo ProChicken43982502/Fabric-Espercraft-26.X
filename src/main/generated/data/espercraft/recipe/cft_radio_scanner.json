@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "group": "cft_radio_scanner",
+  "group": "radio_scanner",
   "key": {
     "#": "minecraft:copper_ingot",
     "C": "minecraft:compass",

@@ -16,26 +16,39 @@ import net.minecraft.world.level.block.AmethystClusterBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.prochicken.espercraft.Espercraft;
 import net.prochicken.espercraft.block.custom.ResearchTable;
+import net.prochicken.espercraft.block.custom.TomatoCropBlock;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ModBlocks {
     public static final Block RIFTSHARD_BLOCK = registerBlock("riftshard_block",
-            properties -> new Block(properties.strength(1.5f)
+            properties -> new Block(properties
+                    .strength(1.5f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.AMETHYST)));
     public static final Block RIFT_CRYSTAL = registerBlock("rift_crystal",
             properties -> new AmethystClusterBlock(7.0f, 10.0f, properties
                     .strength(1.5f)
                     .sound(SoundType.AMETHYST_CLUSTER)
+                    .pushReaction(PushReaction.DESTROY)
                     .noOcclusion()));
     public static final Block RESEARCH_TABLE = registerBlock("research_table",
-            properties -> new ResearchTable(properties.strength(2f)
+            properties -> new ResearchTable(properties
+                    .strength(2f)
             ),
             Component.translatable("tooltip.espercraft.research_table_1"), Component.translatable("tooltip.espercraft.research_table_2"));
+    public static final Block TOMATO_CROP = registerBlockWithoutItem("tomato_crop",
+            properties -> new TomatoCropBlock(properties
+                    .noCollision()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)
+            ));
 
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
@@ -54,6 +67,11 @@ public class ModBlocks {
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function, Component... tooltips) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name))));
         registerBlockItem(name, toRegister, tooltips);
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name), toRegister);
+    }
+
+    private static Block registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, Block> function, Component... tooltips) {
+        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name))));
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name), toRegister);
     }
 

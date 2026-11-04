@@ -23,8 +23,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RADIO_SCANNER);
                         output.accept(ModItems.MAGNIFIER);
                         output.accept(ModBlocks.RESEARCH_TABLE);
+                        output.accept(ModItems.TOMATO_SEEDS);
                         output.accept(ModItems.TOMATO);
                         output.accept(ModItems.ROTTEN_TOMATO);
+                        output.accept(ModItems.TOMATO_SOUP);
+                        output.accept(ModItems.TOMATO_JUICE);
+                        output.accept(ModItems.TOMATO_JELLY);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

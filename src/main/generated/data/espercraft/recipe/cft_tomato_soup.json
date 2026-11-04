@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tomato_soup",
+  "key": {
+    "#": "espercraft:tomato",
+    "B": "minecraft:bowl"
+  },
+  "pattern": [
+    "###",
+    "###",
+    " B "
+  ],
+  "result": {
+    "id": "espercraft:tomato_soup"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "espercraft:cft_tomato_jelly_from_tomato_juice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tomato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "espercraft:tomato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tomato"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "espercraft:cft_tomato_jelly_from_tomato_juice"
+    ]
+  }
+}

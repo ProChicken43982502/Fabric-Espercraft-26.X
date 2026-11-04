@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "group": "cft_magnifier",
+  "group": "magnifier",
   "key": {
     "A": "minecraft:amethyst_shard",
     "G": "minecraft:gold_ingot"
