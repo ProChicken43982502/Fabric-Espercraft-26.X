@@ -8,6 +8,7 @@ import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.creativemodetab.ModCreativeModeTabs;
 import net.prochicken.espercraft.data.ModDataComponents;
 import net.prochicken.espercraft.item.ModItems;
+import net.prochicken.espercraft.registries.ModCompostables;
 import net.prochicken.espercraft.stat.ModStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +30,8 @@ public class Espercraft implements ModInitializer {
 
 		ModDataComponents.registerDataComponents();
 		ModStats.registerModStats();
+
+		ModCompostables.registerCompostables();
 
 		LOGGER.info("Loading Mod " + Espercraft.MOD_ID);
 	}

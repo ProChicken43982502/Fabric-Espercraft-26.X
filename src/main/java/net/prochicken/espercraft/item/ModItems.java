@@ -2,8 +2,7 @@ package net.prochicken.espercraft.item;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.prochicken.espercraft.Espercraft;
 import net.minecraft.core.Registry;
@@ -11,7 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.Item;
+import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.data.ModDataComponents;
 import net.prochicken.espercraft.food.ModFoods;
 import net.prochicken.espercraft.item.custom.MagnifierItem;
@@ -48,9 +47,27 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
     public static final Item TOMATO = registerItem("tomato", properties -> new Item(properties
-            .food(ModFoods.TOMATO, ModFoods.TOMATO_CONSUMABLE)));
+            .food(ModFoods.TOMATO, ModFoods.TOMATO_CONSUMABLE)
+    ));
     public static final Item ROTTEN_TOMATO = registerItem("rotten_tomato", properties -> new Item(properties
-            .food(ModFoods.ROTTEN_TOMATO, ModFoods.ROTTEN_TOMATO_CONSUMABLE)));
+            .food(ModFoods.ROTTEN_TOMATO, ModFoods.ROTTEN_TOMATO_CONSUMABLE)
+    ));
+    public static final Item TOMATO_SEEDS = registerItem("tomato_seeds", properties -> new BlockItem(ModBlocks.TOMATO_CROP, properties
+            .useItemDescriptionPrefix()
+    ));
+    public static final Item TOMATO_SOUP = registerItem("tomato_soup", properties -> new Item(properties
+            .food(ModFoods.TOMATO_SOUP, ModFoods.TOMATO_SOUP_CONSUMABLE)
+            .usingConvertsTo(Items.BOWL)
+            .stacksTo(1)
+    ));
+    public static final Item TOMATO_JUICE = registerItem("tomato_juice", properties -> new Item(properties
+            .food(ModFoods.TOMATO_JUICE, ModFoods.TOMATO_JUICE_CONSUMABLE)
+            .stacksTo(16)
+    ));
+    public static final Item TOMATO_JELLY = registerItem("tomato_jelly", properties -> new Item(properties
+            .food(ModFoods.TOMATO_JELLY, ModFoods.TOMATO_JELLY_CONSUMABLE)
+            .stacksTo(16)
+    ));
 
     public static ResourceKey<Item> getRK(Item item) {
         return BuiltInRegistries.ITEM.getResourceKey(item).get();

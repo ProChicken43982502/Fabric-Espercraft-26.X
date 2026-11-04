@@ -4,10 +4,15 @@
   "item.espercraft.magnifier" : "Magnifier",
   "item.espercraft.tomato" : "Tomato",
   "item.espercraft.rotten_tomato" : "Rotten Tomato",
+  "item.espercraft.tomato_seeds" : "Tomato Seeds",
+  "item.espercraft.tomato_soup" : "Tomato Soup",
+  "item.espercraft.tomato_juice" : "Tomato Juice",
+  "item.espercraft.tomato_jelly" : "Tomato Jelly",
 
   "block.espercraft.rift_crystal" : "Rift Crystal",
   "block.espercraft.riftshard_block" : "Block of Rift Shards",
   "block.espercraft.research_table" : "Research Table",
+  "block.espercraft.tomato_crop" : "Tomato Crop",
 
   "creativemodetab.espercraft.espercraft_creative_mode_tab": "Espercraft",
 

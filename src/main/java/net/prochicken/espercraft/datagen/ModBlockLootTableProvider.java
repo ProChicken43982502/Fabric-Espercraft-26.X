@@ -3,17 +3,25 @@ package net.prochicken.espercraft.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.advancements.predicates.ItemPredicate;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.prochicken.espercraft.block.ModBlocks;
+import net.prochicken.espercraft.block.custom.TomatoCropBlock;
 import net.prochicken.espercraft.item.ModItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -41,6 +49,27 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
                                 LootItem.lootTableItem(ModItems.RIFT_SHARD)
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f)))))
         ));
+
+        this.add(ModBlocks.TOMATO_CROP, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.TOMATO_CROP)
+                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                        .hasProperty(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE)))
+                        .setRolls(UniformGenerator.between(1.0F, 3.0F))
+                        .add(AlternativesEntry.alternatives(
+                                LootItem.lootTableItem(ModItems.ROTTEN_TOMATO)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.02F)),
+                                LootItem.lootTableItem(ModItems.TOMATO)
+                        ))
+                )
+                .withPool(LootPool.lootPool()
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.TOMATO_CROP)
+                                .setProperties(StatePropertiesPredicate.Builder.properties()
+                                        .hasProperty(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE))
+                                .invert())
+                        .add(LootItem.lootTableItem(ModItems.TOMATO_SEEDS))
+                )
+        );
 
     }
 }
