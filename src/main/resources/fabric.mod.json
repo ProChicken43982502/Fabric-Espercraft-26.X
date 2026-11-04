@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "espercraft",
+	"version": "${version}",
+	"name": "Espercraft",
+	"description": "Implement's the Magic of Neverness to Everness's Espers & Anomalies.",
+	"authors": [
+		"ProChicken"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT-Liscense",
+	"icon": "assets/espercraft/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.prochicken.espercraft.Espercraft"
+		],
+		"client": [
+			"net.prochicken.espercraft.EspercraftClient"
+		],
+		"fabric-datagen": [
+			"net.prochicken.espercraft.EspercraftDataGenerator"
+		]
+	},
+	"mixins": [
+		"espercraft.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

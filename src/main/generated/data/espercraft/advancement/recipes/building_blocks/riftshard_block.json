@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rift_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "espercraft:rift_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "espercraft:riftshard_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rift_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "espercraft:riftshard_block"
+    ]
+  }
+}

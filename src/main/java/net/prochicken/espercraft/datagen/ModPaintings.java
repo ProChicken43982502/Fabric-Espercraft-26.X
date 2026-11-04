@@ -24,8 +24,7 @@ public class ModPaintings {
         return ResourceKey.create(Registries.PAINTING_VARIANT, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, id));
     }
 
-    private static void register(final BootstrapContext<PaintingVariant> context, final ResourceKey<PaintingVariant> key, final int width,
-                                 final int height, final boolean hasAuthor) {
+    private static void register(final BootstrapContext<PaintingVariant> context, final ResourceKey<PaintingVariant> key, final int width, final int height, final boolean hasAuthor) {
         context.register(key, new PaintingVariant(width, height, key.identifier(),
                 Optional.of(Component.translatable(key.identifier().toLanguageKey("painting", "title")).withStyle(ChatFormatting.YELLOW)),
                 hasAuthor ? Optional.of(Component.translatable(key.identifier().toLanguageKey("painting", "author")).withStyle(ChatFormatting.GRAY)) : Optional.empty()));
