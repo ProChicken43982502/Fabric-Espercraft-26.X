@@ -18,6 +18,14 @@
 
   "container.espercraft.research": "Research",
 
+  "death.attack.anima": "%s lived a long enough life.",
+  "death.attack.anima.player": "%s's life force was taken by %s",
+  "death.attack.incantation": "%s was forced to death.",
+  "death.attack.incantation.player": "%s was forced to death by %s",
+
+  "effect.espercraft.hexed": "Hexed",
+  "effect.espercraft.hexed.description": "Take additional Incantation and Anima damage",
+
   "painting.espercraft.bearometry.title": "Bearometry",
   "painting.espercraft.bearometry.author": "ProChicken",
 

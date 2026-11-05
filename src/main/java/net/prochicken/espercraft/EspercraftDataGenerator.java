@@ -23,5 +23,6 @@ public class EspercraftDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
 		registryBuilder.add(Registries.PAINTING_VARIANT, ModPaintings::bootstrap);
+		registryBuilder.add(Registries.DAMAGE_TYPE, ModDamageTypes::bootstrap);
 	}
 }

@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier;
 import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.creativemodetab.ModCreativeModeTabs;
 import net.prochicken.espercraft.data.ModDataComponents;
+import net.prochicken.espercraft.effect.ModEffects;
 import net.prochicken.espercraft.item.ModItems;
 import net.prochicken.espercraft.registries.ModCompostables;
 import net.prochicken.espercraft.stat.ModStats;
@@ -32,6 +33,8 @@ public class Espercraft implements ModInitializer {
 		ModStats.registerModStats();
 
 		ModCompostables.registerCompostables();
+
+		ModEffects.registerEffects();
 
 		LOGGER.info("Loading Mod " + Espercraft.MOD_ID);
 	}
