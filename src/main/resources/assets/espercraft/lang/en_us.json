@@ -1,4 +1,5 @@
 {
+  "item.espercraft.film_spool" : "Film Spool",
   "item.espercraft.rift_shard" : "Rift Shard",
   "item.espercraft.radio_scanner" : "Radio Scanner",
   "item.espercraft.magnifier" : "Magnifier",
@@ -9,6 +10,7 @@
   "item.espercraft.tomato_juice" : "Tomato Juice",
   "item.espercraft.tomato_jelly" : "Tomato Jelly",
 
+  "block.espercraft.film_projector" : "Film Projector",
   "block.espercraft.rift_crystal" : "Rift Crystal",
   "block.espercraft.riftshard_block" : "Block of Rift Shards",
   "block.espercraft.research_table" : "Research Table",

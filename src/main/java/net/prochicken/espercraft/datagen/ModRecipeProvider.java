@@ -56,7 +56,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .group("research_table")
                         .unlockedBy(getHasName(ModItems.MAGNIFIER), has(ModItems.MAGNIFIER))
                         .save(output, "cft_research_table");
-                shaped(RecipeCategory.MISC, ModItems.TOMATO_SOUP)
+                shaped(RecipeCategory.FOOD, ModItems.TOMATO_SOUP)
                         .pattern("###")
                         .pattern("###")
                         .pattern(" B ")
@@ -65,20 +65,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .group("tomato_soup")
                         .unlockedBy(getHasName(ModItems.TOMATO), has(ModItems.TOMATO))
                         .save(output, "cft_tomato_soup");
-                shapeless(RecipeCategory.MISC, ModItems.TOMATO_JUICE)
+                shapeless(RecipeCategory.FOOD, ModItems.TOMATO_JUICE)
                         .requires(Items.GLASS_BOTTLE, 1)
                         .requires(ModItems.TOMATO, 3)
                         .group("tomato_juice")
                         .unlockedBy(getHasName(ModItems.TOMATO), has(ModItems.TOMATO))
                         .save(output, "cft_tomato_juice");
-                shapeless(RecipeCategory.MISC, ModItems.TOMATO_JELLY)
+                shapeless(RecipeCategory.FOOD, ModItems.TOMATO_JELLY)
                         .requires(Items.GLASS_BOTTLE, 1)
                         .requires(Items.SUGAR, 1)
                         .requires(ModItems.TOMATO, 3)
                         .group("tomato_jelly")
                         .unlockedBy(getHasName(ModItems.TOMATO), has(ModItems.TOMATO))
                         .save(output, "cft_tomato_jelly");
-                shapeless(RecipeCategory.MISC, ModItems.TOMATO_JELLY)
+                shapeless(RecipeCategory.FOOD, ModItems.TOMATO_JELLY)
                         .requires(Items.SUGAR, 1)
                         .requires(ModItems.TOMATO_JUICE, 1)
                         .group("tomato_jelly")
@@ -89,6 +89,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .group("tomato_seeds")
                         .unlockedBy(getHasName(ModItems.TOMATO), has(ModItems.TOMATO))
                         .save(output, "cft_tomato_seeds");
+                shaped(RecipeCategory.REDSTONE, ModBlocks.FILM_PROJECTOR_BLOCK)
+                        .pattern("F F")
+                        .pattern("Q##")
+                        .pattern("| |")
+                        .define('F', ModItems.FILM_SPOOL)
+                        .define('#', Items.GOLD_INGOT)
+                        .define('Q', Items.QUARTZ)
+                        .define('|', Items.STICK)
+                        .group("film_projector")
+                        .unlockedBy(getHasName(ModItems.FILM_SPOOL), has(ModItems.FILM_SPOOL))
+                        .save(output, "cft_film_projector");
+                shaped(RecipeCategory.MISC, ModItems.FILM_SPOOL)
+                        .pattern("c#c")
+                        .pattern("#C#")
+                        .pattern("c#c")
+                        .define('#', Items.PAPER)
+                        .define('C', Items.COPPER_INGOT)
+                        .define('c', Items.COPPER_NUGGET)
+                        .group("film_spool")
+                        .unlockedBy(getHasName(Items.PAPER), has(Items.PAPER))
+                        .save(output, "cft_film_spool");
             }
         };
     }

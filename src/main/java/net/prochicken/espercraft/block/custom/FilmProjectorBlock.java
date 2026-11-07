@@ -1,0 +1,103 @@
+package net.prochicken.espercraft.block.custom;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.Mth;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+public class FilmProjectorBlock extends Block {
+    public static final IntegerProperty ROTATION = IntegerProperty.create("rotation", 0, 7);
+
+    // Turns a box clockwise by 90 degrees, 'turns' times, around the centre of the block
+    private static VoxelShape rotatedBox(int turns, double x1, double y1, double z1, double x2, double y2, double z2) {
+        for (int i = 0; i < turns; i++) {
+            double newX1 = 16 - z2;
+            double newX2 = 16 - z1;
+            double newZ1 = x1;
+            double newZ2 = x2;
+            x1 = newX1; x2 = newX2;
+            z1 = newZ1; z2 = newZ2;
+        }
+        return Block.box(x1, y1, z1, x2, y2, z2);
+    }
+
+    private static final VoxelShape STAND = Block.box(4.5, 0, 4.5, 11.5, 8, 11.5);
+    private static final VoxelShape DIAGONAL_COLLIDER = Block.box(4.5, 0, 4.5, 11.5, 16, 11.5);
+
+    private static VoxelShape makeShape(int turns) {
+        VoxelShape body = rotatedBox(turns, 4, 8, 1, 12, 16, 14);   // camera body
+        VoxelShape lens = rotatedBox(turns, 6, 10, 14, 10, 14, 16);   // lens
+        return Shapes.or(STAND, body, lens);
+    }
+
+    private static final VoxelShape DIAGONAL_SHAPE = Shapes.or(
+            STAND,
+            Block.box(2, 8, 2, 14, 16, 14)
+    );
+
+    private static final VoxelShape[] SHAPES = {
+            makeShape(0),    // 0: north
+            DIAGONAL_SHAPE,  // 1
+            makeShape(1),    // 2: east
+            DIAGONAL_SHAPE,  // 3
+            makeShape(2),    // 4: south
+            DIAGONAL_SHAPE,  // 5
+            makeShape(3),    // 6: west
+            DIAGONAL_SHAPE   // 7
+    };
+
+    private static final VoxelShape[] SHAPE_COLLIDERS = {
+            makeShape(0),    // 0: north
+            DIAGONAL_COLLIDER,  // 1
+            makeShape(1),    // 2: east
+            DIAGONAL_COLLIDER,  // 3
+            makeShape(2),    // 4: south
+            DIAGONAL_COLLIDER,  // 5
+            makeShape(3),    // 6: west
+            DIAGONAL_COLLIDER   // 7
+    };
+
+    public FilmProjectorBlock(Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(ROTATION, 0));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(ROTATION);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        int rotation = Mth.floor((180.0F + context.getRotation()) * 8.0F / 360.0F + 0.5F) & 7;
+        return this.defaultBlockState().setValue(ROTATION, rotation);
+    }
+
+    @Override
+    protected BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(ROTATION, rotation.rotate(state.getValue(ROTATION), 8));
+    }
+
+    @Override
+    protected BlockState mirror(BlockState state, Mirror mirror) {
+        return state.setValue(ROTATION, mirror.mirror(state.getValue(ROTATION), 8));
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPES[state.getValue(ROTATION)];
+    }
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE_COLLIDERS[state.getValue(ROTATION)];
+    }
+}

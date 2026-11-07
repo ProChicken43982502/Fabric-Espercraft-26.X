@@ -1,0 +1,13 @@
+{
+  "multipart": [
+    { "apply": { "model": "espercraft:block/film_projector_stand" } },
+    { "when": { "rotation": "0" }, "apply": { "model": "espercraft:block/film_projector_main", "y": 180 } },
+    { "when": { "rotation": "1" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal", "y": 270  } },
+    { "when": { "rotation": "2" }, "apply": { "model": "espercraft:block/film_projector_main", "y": 270 } },
+    { "when": { "rotation": "3" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal" } },
+    { "when": { "rotation": "4" }, "apply": { "model": "espercraft:block/film_projector_main" } },
+    { "when": { "rotation": "5" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal", "y": 90 } },
+    { "when": { "rotation": "6" }, "apply": { "model": "espercraft:block/film_projector_main", "y": 90 } },
+    { "when": { "rotation": "7" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal", "y": 180 } }
+  ]
+}

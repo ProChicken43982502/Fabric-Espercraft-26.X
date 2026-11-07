@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 import net.prochicken.espercraft.Espercraft;
+import net.prochicken.espercraft.block.custom.FilmProjectorBlock;
 import net.prochicken.espercraft.block.custom.ResearchTable;
 import net.prochicken.espercraft.block.custom.TomatoCropBlock;
 
@@ -49,7 +50,11 @@ public class ModBlocks {
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)
             ));
-
+    public static final Block FILM_PROJECTOR_BLOCK = registerBlock("film_projector",
+            properties -> new FilmProjectorBlock(properties
+                    .strength(1.5f)
+                    .pushReaction(PushReaction.DESTROY)
+            ));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name))));

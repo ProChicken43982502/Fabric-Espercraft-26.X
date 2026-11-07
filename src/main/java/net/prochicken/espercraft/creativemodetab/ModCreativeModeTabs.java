@@ -17,18 +17,21 @@ public class ModCreativeModeTabs {
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RIFT_SHARD))
                     .title(Component.translatable("creativemodetab.espercraft.espercraft_creative_mode_tab"))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModItems.RIFT_SHARD);
                         output.accept(ModBlocks.RIFT_CRYSTAL);
                         output.accept(ModBlocks.RIFTSHARD_BLOCK);
+                        output.accept(ModBlocks.RESEARCH_TABLE);
+                        output.accept(ModBlocks.FILM_PROJECTOR_BLOCK);
+
+                        output.accept(ModItems.RIFT_SHARD);
                         output.accept(ModItems.RADIO_SCANNER);
                         output.accept(ModItems.MAGNIFIER);
-                        output.accept(ModBlocks.RESEARCH_TABLE);
                         output.accept(ModItems.TOMATO_SEEDS);
                         output.accept(ModItems.TOMATO);
                         output.accept(ModItems.ROTTEN_TOMATO);
                         output.accept(ModItems.TOMATO_SOUP);
                         output.accept(ModItems.TOMATO_JUICE);
                         output.accept(ModItems.TOMATO_JELLY);
+                        output.accept(ModItems.FILM_SPOOL);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

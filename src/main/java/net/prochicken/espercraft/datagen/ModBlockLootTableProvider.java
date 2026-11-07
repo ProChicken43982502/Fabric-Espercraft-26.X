@@ -37,7 +37,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         HolderLookup.RegistryLookup<Enchantment> enchantments = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 
         dropSelf(ModBlocks.RIFTSHARD_BLOCK);
-        dropSelf(ModBlocks.RESEARCH_TABLE);
+        dropSelf(ModBlocks.RESEARCH_TABLE);;
+        dropSelf(ModBlocks.FILM_PROJECTOR_BLOCK);
 
         add(ModBlocks.RIFT_CRYSTAL, block -> createSilkTouchDispatchTable(block,
                 LootItem.lootTableItem(ModItems.RIFT_SHARD)

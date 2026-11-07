@@ -29,6 +29,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
+        itemModelGenerators.generateFlatItem(ModItems.FILM_SPOOL, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.RIFT_SHARD, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.TOMATO, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ModItems.ROTTEN_TOMATO, ModelTemplates.FLAT_ITEM);

@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "bottom": "espercraft:block/research_table_bottom",
-    "front": "espercraft:block/research_table_front",
-    "side": "espercraft:block/research_table_side",
-    "top": "espercraft:block/research_table_top"
-  }
-}
