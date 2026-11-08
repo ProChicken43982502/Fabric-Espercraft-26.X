@@ -1,3 +1,5 @@
+// --- WARNING: Contains AI-generated code ---
+
 package net.prochicken.espercraft.item.custom;
 
 import net.minecraft.core.BlockPos;
@@ -16,6 +18,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.prochicken.espercraft.advancements.ModCriteria;
 import net.prochicken.espercraft.data.Discoveries;
 import net.prochicken.espercraft.data.ModDataComponents;
 import net.prochicken.espercraft.stat.ModStats;
@@ -100,6 +103,7 @@ public class MagnifierItem extends Item {
                     serverPlayer.sendOverlayMessage(Component.literal("Already discovered"));
                     serverPlayer.awardStat(ModStats.SCANNED_WITH_MAGNIFIER, 1);
                 }
+                ModCriteria.SCAN_BLOCK.trigger(serverPlayer, level.getBlockState(target));
             }
 
             PROGRESS.remove(entity.getUUID());

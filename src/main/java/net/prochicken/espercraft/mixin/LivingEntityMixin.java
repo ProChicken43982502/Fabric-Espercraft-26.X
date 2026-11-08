@@ -1,3 +1,5 @@
+// --- WARNING: Contains AI-generated code ---
+
 package net.prochicken.espercraft.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;

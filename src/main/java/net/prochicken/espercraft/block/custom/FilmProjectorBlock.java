@@ -1,3 +1,5 @@
+// --- WARNING: Contains AI-generated code ---
+
 package net.prochicken.espercraft.block.custom;
 
 import net.minecraft.core.BlockPos;

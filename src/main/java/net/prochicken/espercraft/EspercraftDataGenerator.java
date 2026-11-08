@@ -18,6 +18,7 @@ public class EspercraftDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModRegistryDataProvider::new);
 		pack.addProvider(ModPaintingTagsProvider::new);
+		pack.addProvider(ModAdvancementsProvider::new);
 	}
 
 	@Override

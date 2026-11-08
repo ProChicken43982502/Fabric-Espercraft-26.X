@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
 
+import net.prochicken.espercraft.advancements.ModCriteria;
 import net.prochicken.espercraft.block.ModBlocks;
 import net.prochicken.espercraft.creativemodetab.ModCreativeModeTabs;
 import net.prochicken.espercraft.data.ModDataComponents;
@@ -35,6 +36,8 @@ public class Espercraft implements ModInitializer {
 		ModCompostables.registerCompostables();
 
 		ModEffects.registerEffects();
+
+		ModCriteria.registerCriteria();
 
 		LOGGER.info("Loading Mod " + Espercraft.MOD_ID);
 	}

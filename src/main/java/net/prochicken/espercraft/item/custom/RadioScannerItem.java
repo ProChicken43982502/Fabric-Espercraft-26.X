@@ -1,3 +1,5 @@
+// --- WARNING: Contains AI-generated code ---
+
 package net.prochicken.espercraft.item.custom;
 
 import net.minecraft.network.chat.Component;

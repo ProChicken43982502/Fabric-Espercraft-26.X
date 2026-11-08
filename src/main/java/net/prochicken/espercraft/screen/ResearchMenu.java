@@ -1,3 +1,5 @@
+// --- WARNING: Contains AI-generated code ---
+
 package net.prochicken.espercraft.screen;
 
 import net.minecraft.world.entity.player.Inventory;

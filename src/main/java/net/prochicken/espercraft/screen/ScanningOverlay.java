@@ -1,3 +1,5 @@
+// --- WARNING: Contains AI-generated code ---
+
 package net.prochicken.espercraft.screen;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
