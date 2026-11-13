@@ -1,13 +1,21 @@
 {
   "multipart": [
     { "apply": { "model": "espercraft:block/film_projector_stand" } },
-    { "when": { "rotation": "0" }, "apply": { "model": "espercraft:block/film_projector_main", "y": 180 } },
-    { "when": { "rotation": "1" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal", "y": 270  } },
-    { "when": { "rotation": "2" }, "apply": { "model": "espercraft:block/film_projector_main", "y": 270 } },
-    { "when": { "rotation": "3" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal" } },
-    { "when": { "rotation": "4" }, "apply": { "model": "espercraft:block/film_projector_main" } },
-    { "when": { "rotation": "5" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal", "y": 90 } },
-    { "when": { "rotation": "6" }, "apply": { "model": "espercraft:block/film_projector_main", "y": 90 } },
-    { "when": { "rotation": "7" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal", "y": 180 } }
+    { "when": { "rotation": "0", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_powered", "y": 180 } },
+    { "when": { "rotation": "0", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_unpowered", "y": 180 } },
+    { "when": { "rotation": "1", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_powered", "y": 270  } },
+    { "when": { "rotation": "1", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_unpowered", "y": 270  } },
+    { "when": { "rotation": "2", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_powered", "y": 270 } },
+    { "when": { "rotation": "2", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_unpowered", "y": 270 } },
+    { "when": { "rotation": "3", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_powered" } },
+    { "when": { "rotation": "3", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_unpowered" } },
+    { "when": { "rotation": "4", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_powered" } },
+    { "when": { "rotation": "4", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_unpowered" } },
+    { "when": { "rotation": "5", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_powered", "y": 90 } },
+    { "when": { "rotation": "5", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_unpowered", "y": 90 } },
+    { "when": { "rotation": "6", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_powered", "y": 90 } },
+    { "when": { "rotation": "6", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_unpowered", "y": 90 } },
+    { "when": { "rotation": "7", "powered": "true" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_powered", "y": 180 } },
+    { "when": { "rotation": "7", "powered": "false" }, "apply": { "model": "espercraft:block/film_projector_main_diagonal_unpowered", "y": 180 } }
   ]
 }

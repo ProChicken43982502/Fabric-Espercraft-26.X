@@ -32,6 +32,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TOMATO_JUICE);
                         output.accept(ModItems.TOMATO_JELLY);
                         output.accept(ModItems.FILM_SPOOL);
+                        output.accept(ModItems.OLD_TIMEY_FILM_SPOOL);
                     }).build());
 
     public static void registerModCreativeModeTabs() {

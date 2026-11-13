@@ -20,5 +20,8 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
     protected void addTags(HolderLookup.Provider registries) {
         tag(ModTags.Items.CHARGES_RADIO_SCANNER)
                 .add(ModItems.getRK(ModItems.RIFT_SHARD));
+        tag(ModTags.Items.FILM_SPOOL)
+                .add(ModItems.getRK(ModItems.FILM_SPOOL))
+                .add(ModItems.getRK(ModItems.OLD_TIMEY_FILM_SPOOL));
     }
 }

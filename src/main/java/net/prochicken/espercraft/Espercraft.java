@@ -6,6 +6,7 @@ import net.minecraft.resources.Identifier;
 
 import net.prochicken.espercraft.advancements.ModCriteria;
 import net.prochicken.espercraft.block.ModBlocks;
+import net.prochicken.espercraft.block.entity.ModBlockEntities;
 import net.prochicken.espercraft.creativemodetab.ModCreativeModeTabs;
 import net.prochicken.espercraft.data.ModDataComponents;
 import net.prochicken.espercraft.effect.ModEffects;
@@ -29,6 +30,7 @@ public class Espercraft implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModBlockEntities.registerBlockEntities();
 
 		ModDataComponents.registerDataComponents();
 		ModStats.registerModStats();

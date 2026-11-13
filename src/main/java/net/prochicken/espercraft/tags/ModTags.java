@@ -17,6 +17,7 @@ public class ModTags {
     }
     public static class Items {
         public static final TagKey<Item> CHARGES_RADIO_SCANNER = createTag("charges_radio_scanner");
+        public static final TagKey<Item> FILM_SPOOL = createTag("film_spool");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Espercraft.MOD_ID, name));
